@@ -2,27 +2,27 @@ import { Marquee } from "@/components/motion/marquee";
 import { SplitTextReveal } from "@/components/motion/split-text-reveal";
 import { Reveal } from "@/components/motion/reveal";
 
-const AWARDS = [
-  "Awwwards SOTD ×6",
-  "FWA of the Day ×4",
-  "CSSDA Best UX",
-  "Webby Honoree",
-  "Type Directors Club",
-  "GSAP Site of the Week",
+const PRINCIPLES = [
+  "Design with purpose",
+  "Responsive by default",
+  "Performance in mind",
+  "Interactive by nature",
+  "Built around your goals",
+  "Thoughtful engineering",
 ];
 
-/** Social proof: award marquee + one big testimonial. */
+/** Principles marquee + a first-person statement. */
 export function Testimonial() {
   return (
     <section className="border-t border-border">
-      <div className="py-10" aria-label="Awards">
+      <div className="py-10" aria-label="Development principles">
         <Marquee duration={28} reverse>
-          {AWARDS.map((award) => (
+          {PRINCIPLES.map((principle) => (
             <span
-              key={award}
+              key={principle}
               className="flex items-center gap-[4vw] whitespace-nowrap text-label !text-base"
             >
-              {award}
+              {principle}
               <span className="text-accent" aria-hidden="true">
                 —
               </span>
@@ -33,7 +33,7 @@ export function Testimonial() {
 
       <div className="container-x section-y border-t border-border">
         <Reveal>
-          <p className="text-label mb-10">04 — Word on the street</p>
+          <p className="text-label mb-10">04 — What you can expect</p>
         </Reveal>
         <figure>
           <blockquote>
@@ -42,15 +42,15 @@ export function Testimonial() {
               type="lines"
               className="text-display-sm max-w-5xl italic text-foreground/90"
             >
-              “They don’t build websites. They build the feeling you get in the
-              first ten seconds of a great film — and then they make it load in
-              one.”
+              “I bring design, interaction and engineering together to create
+              digital experiences that are clear, engaging and built to work
+              beautifully.”
             </SplitTextReveal>
           </blockquote>
           <Reveal delay={0.25}>
             <figcaption className="mt-10 text-sm text-muted-foreground">
-              <span className="text-foreground">Léa Fontaine</span> — Head of
-              Brand, Maison Huit
+              <span className="text-foreground">Jayendra Kasera</span> —
+              Independent Developer
             </figcaption>
           </Reveal>
         </figure>
