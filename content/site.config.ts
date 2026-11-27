@@ -8,21 +8,19 @@
 
 export const siteConfig = {
   /** Brand name — used in navbar, footer, metadata, OG image */
-  name: "AETHER",
+  name: "Jayendra Kasera",
   /** Legal / long-form name for JSON-LD */
-  legalName: "Aether Studio",
+  legalName: "Jayendra Kasera",
   /** One-line positioning, shown in hero + metadata */
-  tagline: "Digital experiences with a cinematic soul",
+  tagline: "Modern websites. Thoughtful engineering. Immersive experiences.",
   /** SEO description */
   description:
-    "Aether is an award-winning creative studio crafting cinematic websites, real-time 3D and brand experiences for ambitious companies.",
+    "Jayendra Kasera is an independent developer building responsive websites, interactive 3D experiences, e-commerce platforms and reliable web applications.",
   /** Production URL — used for canonical, sitemap, OG */
-  url: "https://aether-boilerplate.vercel.app",
+  url: "https://aether-client-demo-lovat.vercel.app",
   /** Contact */
-  email: "hello@aether.studio",
-  location: "Milan — Working worldwide",
-  /** Founded year, shown in footer */
-  since: 2018,
+  email: "jayendrakasera05@gmail.com",
+  location: "India — Working worldwide",
 
   nav: [
     { label: "Work", href: "/work" },
@@ -32,30 +30,32 @@ export const siteConfig = {
   ] as const,
 
   socials: [
-    { label: "Instagram", href: "https://instagram.com" },
-    { label: "X / Twitter", href: "https://x.com" },
-    { label: "LinkedIn", href: "https://linkedin.com" },
-    { label: "Awwwards", href: "https://awwwards.com" },
+    { label: "GitHub", href: "https://github.com/jayendrakasera" },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/jayendra-kasera-413947276/",
+    },
+    { label: "Instagram", href: "https://www.instagram.com/jayendra_kasera/" },
   ] as const,
 
   hero: {
     /** Each entry is one line of the display title */
-    titleLines: ["Cinematic", "digital", "experiences"] as const,
+    titleLines: ["Digital", "experiences", "with purpose"] as const,
     subtitle:
-      "We design and build immersive websites, real-time 3D and motion systems for brands that refuse to be ordinary.",
-    cta: { label: "See our work", href: "/work" },
+      "I design and build responsive websites, immersive 3D experiences and practical digital products — bringing thoughtful design and reliable engineering together.",
+    cta: { label: "Explore the work", href: "/work" },
   },
 
-  /** Fake client logos for the marquee — replace per project */
+  /** Marquee of capabilities — not client or partner logos */
   clients: [
-    "NOVA FILMS",
-    "KLAR",
-    "ORBITAL",
-    "MAISON HUIT",
-    "SPECTRA",
-    "VANTA LABS",
-    "POLARIS",
-    "HELIOTROPE",
+    "WEB DEVELOPMENT",
+    "INTERACTIVE 3D",
+    "RESPONSIVE DESIGN",
+    "E-COMMERCE",
+    "BACKEND SYSTEMS",
+    "API DEVELOPMENT",
+    "MOTION & INTERACTION",
+    "PERFORMANCE",
   ] as const,
 } as const;
 
