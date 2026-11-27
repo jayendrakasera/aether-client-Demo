@@ -5,24 +5,24 @@ import { padIndex } from "@/lib/utils";
 
 const SERVICES = [
   {
-    name: "Creative Development",
+    name: "Web Development",
     description:
-      "Next.js, WebGL, GSAP — engineering with an art director's eye.",
+      "Responsive, fast and polished websites built around your brand, audience and business goals.",
   },
   {
-    name: "3D & Real-time",
+    name: "3D & Interactive Experiences",
     description:
-      "Product configurators, generative scenes, Blender-to-web pipelines.",
+      "Immersive 3D visuals, product showcases and engaging interactions for memorable digital experiences.",
   },
   {
-    name: "Art Direction",
+    name: "E-commerce & Business Websites",
     description:
-      "Typography, motion language and image systems that carry a brand.",
+      "Practical online storefronts and business websites designed to present products and convert visitors.",
   },
   {
-    name: "Motion Design",
+    name: "Backend & API Development",
     description:
-      "Micro-interactions to full title sequences — nothing moves by accident.",
+      "Reliable application backends, REST APIs, database integration and connected web applications.",
   },
 ];
 
@@ -32,7 +32,7 @@ export function Services() {
     <section className="border-t border-border">
       <div className="container-x section-y">
         <Reveal>
-          <p className="text-label mb-14">03 — What we do</p>
+          <p className="text-label mb-14">03 — What I do</p>
         </Reveal>
         <ul>
           {SERVICES.map((service, i) => (
