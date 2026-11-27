@@ -22,7 +22,7 @@ export function Footer() {
     <footer className="border-t border-border">
       <div className="container-x section-y">
         <Reveal>
-          <p className="text-label mb-8">Got a project in mind?</p>
+          <p className="text-label mb-8">Have a project in mind?</p>
         </Reveal>
         <TransitionLink
           href="/contact"
@@ -35,10 +35,10 @@ export function Footer() {
             type="words"
             className="text-display-xl transition-colors duration-500 group-hover:text-accent"
           >
-            Let&apos;s make it cinematic
+            Let&apos;s build something meaningful
           </SplitTextReveal>
           <span className="mt-6 inline-flex items-center gap-2 text-label transition-colors group-hover:text-accent">
-            Start a conversation
+            Send a brief
             <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
           </span>
         </TransitionLink>
