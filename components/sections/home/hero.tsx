@@ -34,7 +34,7 @@ export function Hero() {
           animate={loaderDone ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          Creative studio — Est. {siteConfig.since}
+          Independent developer — India
         </motion.p>
 
         <h1
