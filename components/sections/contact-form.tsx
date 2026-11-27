@@ -6,27 +6,32 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { AnimatePresence, motion } from "framer-motion";
 import { Check, Loader2 } from "lucide-react";
+import { siteConfig } from "@/content/site.config";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
 const contactSchema = z.object({
-  name: z.string().min(2, "Tell us your name"),
-  email: z.email("We need a valid email to reply"),
+  name: z.string().min(2, "Please enter your name"),
+  email: z.email("Please enter a valid email address"),
   company: z.string().optional(),
-  budget: z.string().min(1, "Pick a range — rough is fine"),
-  message: z.string().min(20, "Give us at least a couple of sentences"),
+  budget: z.string().min(1, "Please select a budget range"),
+  message: z.string().min(20, "Please share a little more about your project"),
 });
 
 type ContactValues = z.infer<typeof contactSchema>;
 
-const BUDGETS = ["< €10k", "€10k – €25k", "€25k – €50k", "€50k +"];
+const BUDGETS = [
+  "Below ₹25,000",
+  "₹25,000 – ₹50,000",
+  "₹50,000 – ₹1,00,000",
+  "₹1,00,000+",
+];
 
 /**
- * Contact form — react-hook-form + zod validation, animated submit
- * states. The submit handler is a stub: wire it to a route handler,
- * server action or service (Resend, Formspree…) per project.
+ * Contact form — validates the brief, then opens a pre-addressed email draft.
+ * The visitor reviews the generated email and sends it from their email app.
  */
 export function ContactForm() {
   const [sent, setSent] = useState(false);
@@ -45,9 +50,19 @@ export function ContactForm() {
   const budget = useWatch({ control, name: "budget" });
 
   const onSubmit = async (values: ContactValues) => {
-    // Demo stub — replace with a real submission per project
-    await new Promise((r) => setTimeout(r, 1200));
-    console.info("[contact] payload ready to send:", values);
+    const subject = `Project enquiry from ${values.name}`;
+    const body = [
+      `Name: ${values.name}`,
+      `Email: ${values.email}`,
+      `Company: ${values.company || "Not provided"}`,
+      `Budget: ${values.budget}`,
+      "",
+      "Project details:",
+      values.message,
+    ].join("\n");
+
+    const mailto = `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
     setSent(true);
   };
 
@@ -66,11 +81,11 @@ export function ContactForm() {
               <Check className="size-6" />
             </span>
             <h2 className="mt-8 font-display text-4xl">
-              Message received<span className="text-accent">.</span>
+              Email draft opened<span className="text-accent">.</span>
             </h2>
             <p className="mt-4 max-w-md text-muted-foreground">
-              Thanks for reaching out — we read everything ourselves and usually
-              reply within two working days.
+              Your email app should open with the project brief ready to send.
+              Review the details and press send to complete your enquiry.
             </p>
           </motion.div>
         ) : (
@@ -87,7 +102,7 @@ export function ContactForm() {
                 <Label htmlFor="name">Name *</Label>
                 <Input
                   id="name"
-                  placeholder="Ada Lovelace"
+                  placeholder="Your name"
                   aria-invalid={!!errors.name}
                   {...register("name")}
                 />
@@ -102,7 +117,7 @@ export function ContactForm() {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="ada@company.com"
+                  placeholder="you@example.com"
                   aria-invalid={!!errors.email}
                   {...register("email")}
                 />
@@ -177,7 +192,7 @@ export function ContactForm() {
             >
               {isSubmitting ? (
                 <>
-                  <Loader2 className="animate-spin" /> Sending…
+                  <Loader2 className="animate-spin" /> Opening…
                 </>
               ) : (
                 "Send the brief"
