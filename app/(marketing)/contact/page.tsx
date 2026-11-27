@@ -6,7 +6,8 @@ import { ContactForm } from "@/components/sections/contact-form";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Tell us about your project — we reply within two days.",
+  description:
+    "Get in touch with Jayendra Kasera about a website, 3D experience or web application project.",
 };
 
 export default function ContactPage() {
@@ -20,7 +21,7 @@ export default function ContactPage() {
         type="words"
         className="text-display-xl mb-24 max-w-[14ch]"
       >
-        Tell us what keeps you up at night
+        Tell me about your next project
       </SplitTextReveal>
 
       <div className="grid gap-20 lg:grid-cols-[1fr_20rem]">
@@ -40,7 +41,7 @@ export default function ContactPage() {
             </a>
           </Reveal>
           <Reveal delay={0.35}>
-            <p className="text-label mb-3">Studio</p>
+            <p className="text-label mb-3">Location</p>
             <p className="text-muted-foreground">{siteConfig.location}</p>
           </Reveal>
           <Reveal delay={0.45}>
