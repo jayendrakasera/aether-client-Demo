@@ -4,18 +4,18 @@ import { TransitionLink } from "@/components/layout/page-transition";
 import { ArrowUpRight } from "lucide-react";
 
 const STATS = [
-  { value: "60+", label: "Projects shipped" },
-  { value: "14", label: "International awards" },
-  { value: "8", label: "Years of practice" },
+  { value: "UI", label: "Responsive web experiences" },
+  { value: "3D", label: "Interactive visual experiences" },
+  { value: "API", label: "Connected digital products" },
 ];
 
-/** Studio manifesto — big editorial statement + stats row. */
+/** Personal approach — big editorial statement + areas of focus. */
 export function Manifesto() {
   return (
     <section className="border-t border-border">
       <div className="container-x section-y">
         <Reveal>
-          <p className="text-label mb-10">02 — The studio</p>
+          <p className="text-label mb-10">02 — My approach</p>
         </Reveal>
 
         <SplitTextReveal
@@ -23,9 +23,9 @@ export function Manifesto() {
           type="lines"
           className="text-display-sm max-w-4xl text-foreground/90"
         >
-          We believe attention is earned, not bought. Every site we ship blends
-          film-grade art direction with obsessive engineering — because a
-          beautiful thing that stutters is not a beautiful thing.
+          I believe a website should do more than look good. It should feel
+          intuitive, work beautifully on every screen and turn thoughtful
+          engineering into an experience people remember.
         </SplitTextReveal>
 
         <Reveal delay={0.2} className="mt-10">
@@ -34,7 +34,7 @@ export function Manifesto() {
             data-cursor="hover"
             className="link-underline inline-flex items-center gap-2 text-label text-foreground"
           >
-            More about us <ArrowUpRight className="size-3.5" />
+            More about me <ArrowUpRight className="size-3.5" />
           </TransitionLink>
         </Reveal>
 
