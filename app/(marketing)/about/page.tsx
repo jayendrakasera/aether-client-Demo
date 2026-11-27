@@ -10,58 +10,54 @@ import { padIndex } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "A small studio with film-grade art direction and obsessive engineering.",
+    "Meet Jayendra Kasera — an independent developer focused on responsive websites, interactive experiences and reliable web applications.",
 };
 
 const VALUES = [
   {
-    name: "Craft over volume",
+    name: "Clarity before code",
     description:
-      "We take on a handful of projects a year. Each one gets the whole studio.",
+      "I start by understanding the goal, the audience and the problem the website needs to solve.",
   },
   {
-    name: "Performance is design",
+    name: "Performance matters",
     description:
-      "A cinematic site that stutters is a broken site. We budget every kilobyte.",
+      "A polished experience should also feel fast, responsive and reliable across devices.",
   },
   {
-    name: "Accessible by default",
+    name: "Built for every screen",
     description:
-      "Reduced motion, keyboard paths and contrast are part of the brief, not an afterthought.",
+      "Responsive layouts and accessible interactions are part of the build from the beginning.",
   },
   {
-    name: "Partners, not vendors",
+    name: "Thoughtful engineering",
     description:
-      "The best work happens when we're in the room early — strategy through ship.",
+      "I bring frontend experiences and backend functionality together with maintainability in mind.",
   },
 ];
 
-const TEAM = [
-  { name: "Giulia Ferri", role: "Creative Director" },
-  { name: "Marco Bell", role: "Lead Creative Developer" },
-  { name: "Ada Lindqvist", role: "3D & Motion" },
-  { name: "Tomás Rey", role: "Design Engineer" },
-];
+const TEAM = [{ name: "Jayendra Kasera", role: "Independent Developer" }];
 
 export default function AboutPage() {
   return (
     <main className="pt-40">
       <header className="container-x mb-24">
         <Reveal>
-          <p className="text-label mb-8">About the studio</p>
+          <p className="text-label mb-8">About me</p>
         </Reveal>
         <SplitTextReveal
           as="h1"
           type="words"
           className="text-display-xl max-w-[14ch]"
         >
-          Small studio, heavyweight craft
+          Independent mindset, end-to-end craft
         </SplitTextReveal>
         <Reveal delay={0.25}>
           <p className="mt-10 max-w-xl text-lg text-muted-foreground">
-            {siteConfig.legalName} is a creative studio based in Milan, working
-            worldwide. We design and engineer digital experiences that move —
-            emotionally and at 60 frames per second.
+            I&apos;m Jayendra Kasera, an independent developer based in India.
+            I build responsive websites, interactive digital experiences and
+            practical web applications — combining modern frontend work with
+            backend engineering.
           </p>
         </Reveal>
       </header>
@@ -71,7 +67,7 @@ export default function AboutPage() {
         <ParallaxLayer speed={-0.4} className="absolute -inset-y-20 inset-x-0">
           <Image
             src="/covers/polaris-observatory.svg"
-            alt="Abstract studio artwork"
+            alt="Abstract digital artwork"
             fill
             sizes="100vw"
             className="object-cover"
@@ -82,7 +78,7 @@ export default function AboutPage() {
       {/* Values */}
       <section className="container-x section-y">
         <Reveal>
-          <p className="text-label mb-14">What we stand for</p>
+          <p className="text-label mb-14">How I work</p>
         </Reveal>
         <div className="grid gap-x-10 gap-y-14 md:grid-cols-2">
           {VALUES.map((value, i) => (
@@ -103,7 +99,7 @@ export default function AboutPage() {
       <section className="border-t border-border">
         <div className="container-x section-y">
           <Reveal>
-            <p className="text-label mb-14">The people</p>
+            <p className="text-label mb-14">The developer</p>
           </Reveal>
           <ul>
             {TEAM.map((person, i) => (
