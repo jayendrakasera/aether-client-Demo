@@ -50,15 +50,14 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const organizationJsonLd = {
+const personJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "Person",
   name: siteConfig.legalName,
-  alternateName: siteConfig.name,
   url: siteConfig.url,
   email: siteConfig.email,
   description: siteConfig.description,
-  foundingDate: String(siteConfig.since),
+  jobTitle: "Independent Developer",
   sameAs: siteConfig.socials.map((s) => s.href),
 };
 
@@ -76,7 +75,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationJsonLd),
+            __html: JSON.stringify(personJsonLd),
           }}
         />
         <SmoothScroll />
