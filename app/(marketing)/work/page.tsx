@@ -4,19 +4,19 @@ import { Reveal } from "@/components/motion/reveal";
 import { WorkGrid } from "@/components/sections/work-grid";
 
 export const metadata: Metadata = {
-  title: "Work",
+  title: "Selected Experiences",
   description:
-    "Selected projects — cinematic websites, real-time 3D and brand experiences.",
+    "A visual showcase of website concepts, interactive experiences and digital design directions.",
 };
 
 export default function WorkPage() {
   return (
     <main className="container-x pt-40 pb-28">
       <Reveal>
-        <p className="text-label mb-8">Selected work</p>
+        <p className="text-label mb-8">Selected experiences</p>
       </Reveal>
       <SplitTextReveal as="h1" type="words" className="text-display-xl mb-20">
-        Every pixel earns its place
+        Ideas brought to life
       </SplitTextReveal>
       <WorkGrid />
     </main>
